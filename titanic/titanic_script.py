@@ -118,7 +118,7 @@ test_df["HasCabin"]  = get_has_cabin(test_df)
 deck_to_numeral = { 'A':1, 'B':2, 'C':3, 'D':4, 'E':5, 'F':6, 'T':7, 'G':8}
 def get_deck_list(df):
 	deck_list = []
-	for cabin in df["Cabin"].values: 
+	for cabin in df["Cabin"].values:
 		for deck in deck_to_numeral:
 			if isinstance(cabin, float):
 				deck_list.append(0)
@@ -215,7 +215,8 @@ test_df["Sex"] = test_df["Sex"].map(get_sex)
 print(train_df["Embarked"].values)
 # lets start off with some predictions
 #seed = 0
-#X_train, X_test, y_train, y_test = train_test_split(train_df[features], train_df["Survived"], test_size = 0.33, random_state=seed)
+#X_train, X_test, y_train, y_test = train_test_split(train_df[features],\
+#   train_df["Survived"], test_size = 0.33, random_state=seed)
 xgbc_pipeline = make_pipeline(Imputer(), XGBClassifier())
 #xgbc_pipeline.fit(X_train, y_train)
 #xgbc_preds = xgbc_pipeline.predict(X_test)
@@ -238,3 +239,4 @@ pred_df = pd.DataFrame(
 		)
 pred_df.to_csv("sub.csv", index = False)
 print("sub.csv")
+
