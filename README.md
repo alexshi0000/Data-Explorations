@@ -1,2 +1,2 @@
 # Data-Explorations
-collection of data science related projects. mostly ipython notebooks for kaggle.
+collection of data science related projects. mostly ipython notebooks for kaggle insights and submission scripts.
