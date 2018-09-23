@@ -94,7 +94,6 @@ void grow_tree(node *root, short depth){
                 bright_entropy   = -p_bright*(log(p_bright)/log(2)) - q_bright*(log(q_bright)/log(2));
                 dark_entropy     = -p_dark*(log(p_dark)/log(2)) - q_dark*(log(q_dark)/log(2));
                 weighted_entropy = (bright_total/(double)root->sample_size)*bright_entropy + (dark_total/(double)root->sample_size)*dark_entropy;
-                //cout<<"p_bright: "<<p_bright<<" q_bright: "<<q_bright<<" p_dark: "<<p_dark<<" q_dark: "<<q_dark<<" bright_entropy: "<<bright_entropy<<" dark_entropy: "<<dark_entropy<<" weighted_entropy: "<<weighted_entropy<<endl;
                 if(1.0-weighted_entropy > max_info_gain){
                     max_info_gain = 1.0-weighted_entropy;
                     x = i;
@@ -243,7 +242,7 @@ int main(int argc, char **argv){
         if(string_builder.compare("") != 0)        //get last token
             tokens.push_back(stoi(string_builder));
         //turn 28x28 to 14x14
-        short *gray_scale = (short*)malloc(sizeof(short)*(28*28));            //we dont need to add one because classification data is not required for prediction
+        short *gray_scale = (short*)malloc(sizeof(short)*(28*28));
         for(int x = 0; x < 28; x++){
             for(int y = 0; y < 28; y++){
                 /*

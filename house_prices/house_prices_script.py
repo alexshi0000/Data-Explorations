@@ -78,15 +78,15 @@ test_df['FireplaceQu'] = test_df['FireplaceQu'].fillna('None')
 
 # lets get a set of neighborhoods
 def get_lotfrontage(df):
-	visited = []
-	for nbhood in df['Neighborhood'].values:
-		if nbhood in visited:
-			continue
-		visited.append(nbhood)
-		df['LotFrontage'][df['Neighborhood'] == nbhood] =\
-			df['LotFrontage'][df['Neighborhood'] == nbhood].fillna(\
-			df['LotFrontage'][df['Neighborhood'] == nbhood].mean())
-	return df
+        visited = []
+        for nbhood in df['Neighborhood'].values:
+                if nbhood in visited:
+                        continue
+                visited.append(nbhood)
+                df['LotFrontage'][df['Neighborhood'] == nbhood] =\
+                        df['LotFrontage'][df['Neighborhood'] == nbhood].fillna(\
+                        df['LotFrontage'][df['Neighborhood'] == nbhood].mean())
+        return df
 
 train_df = get_lotfrontage(train_df)
 test_df  = get_lotfrontage(test_df)
@@ -97,22 +97,22 @@ test_df  = get_lotfrontage(test_df)
 
 # no garage cond means no garage to begin with
 for col in ['GarageCond', 'GarageType', 'GarageFinish', 'GarageQual']:
-	train_df[col] = train_df[col].fillna('None')
-	test_df[col] = test_df[col].fillna('None')
+        train_df[col] = train_df[col].fillna('None')
+        test_df[col] = test_df[col].fillna('None')
 
 for col in ['GarageYrBlt', 'GarageArea', 'GarageCars']:
-	train_df[col] = train_df[col].fillna(0)
-	test_df[col] = test_df[col].fillna(0)
+        train_df[col] = train_df[col].fillna(0)
+        test_df[col] = test_df[col].fillna(0)
 
 # set na for bsmt
 for col in ['BsmtExposure', 'BsmtFinType2', 'BsmtCond', 'BsmtQual', 'BsmtFinType1']:
-	train_df[col] = train_df[col].fillna('None')
-	test_df[col] = test_df[col].fillna('None')
+        train_df[col] = train_df[col].fillna('None')
+        test_df[col] = test_df[col].fillna('None')
 
 for col in ['BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF','TotalBsmtSF',\
 'BsmtFullBath', 'BsmtHalfBath']:
-	train_df[col] = train_df[col].fillna('None')
-	test_df[col] = test_df[col].fillna('None')
+        train_df[col] = train_df[col].fillna('None')
+        test_df[col] = test_df[col].fillna('None')
 
 train_df['MasVnrType'] = train_df['MasVnrType'].fillna('None')
 test_df['MasVnrType'] = test_df['MasVnrType'].fillna('None')
@@ -172,12 +172,12 @@ test_df = pd.get_dummies(test_df, columns = dummies_test)
 
 
 for col in train_df.columns.values:
-	if not col in test_df.columns.values:
-		train_df = train_df.drop(col, 1)
+        if not col in test_df.columns.values:
+                train_df = train_df.drop(col, 1)
 
 for col in test_df.columns.values:
-	if not col in train_df.columns.values:
-		test_df = test_df.drop(col, 1)
+        if not col in train_df.columns.values:
+                test_df = test_df.drop(col, 1)
 
 train_df.to_csv("the_data.csv")
 
@@ -186,7 +186,7 @@ X_train = train_df
 X_test  = test_df
 
 def rmse(y_true, y_pred):
-	return np.sqrt(mean_squared_error(y_true, y_pred))
+        return np.sqrt(mean_squared_error(y_true, y_pred))
 
 
 gbr_pipeline = make_pipeline(Imputer(),\
@@ -203,7 +203,7 @@ output = pd.DataFrame(
     data = {
         "Id":test_id, "SalePrice":ensemble
     }
-) 
+)
 # no indexing
 output.to_csv("sub.csv", index = False)
 

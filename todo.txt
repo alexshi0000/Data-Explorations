@@ -1,0 +1,24 @@
+THINGS TO LOOK INTO FOR DATA SCIENCE COOPS
+
+Having product/business sense and being able to brainstorm and
+formulate business questions (often open and ambigious) into data questions.
+
+Some proficiency of SQL, Python/R, Spark, Git, etc. to carry out your
+analysis in order to answer the data questions.
+
+Brush up on simple algos, data structures, runtime analysis, etc.
+Some companies might have programming challenges that'll include testing you on these.
+
+If there's any particular concept or questions that interests you,
+consider making a s i d e p r o j e c t out of it to build technical chops.
+Kaggle competitions are a great intro (especially for ML and data cleaning),
+and you can always try scraping data yourself (say from FB/Twitter/LinkedIn) to analyze.
+
+Some softeng postings (where you get placed into a team after the offer)
+might have data-oriented projects where you can gain DS exposure.
+
+Stats knowledge: applying statistical tests on real data (which is
+usually much less clean than an assignment question), confidence intervals,
+significance tests, interpreting p-vals, experimental design, etc.
+Knowing the pitfalls/limitations/assumptions under any test you use is also
+important + being aware of how violation of these will impact your results.
