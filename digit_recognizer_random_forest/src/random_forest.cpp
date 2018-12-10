@@ -2,15 +2,15 @@
 #include <omp.h>
 using namespace std;
 
-#define MIN_SAMPLE_SIZE 	(7)
-#define MIN_SEARCH_SIZE		(7)
-#define MAX_TREE_DEPTH  	(27)
-#define MAX_SEARCH_DEPTH	(27)
-#define FOREST_SIZE		(512)		//lets get 100 trees in one forest
-#define SAMPLE_SIZE		(42000)
-#define N_FEATURES		(12)		//number of features*28*28
-#define FEATURE_SET		(28)		//amount of features to look for, m = sqrt(# of input variables)
-#define GRADIENT                (10)           //fit 10% of all images into each classification tree
+#define MIN_SAMPLE_SIZE   (7)
+#define MIN_SEARCH_SIZE	  (7)
+#define MAX_TREE_DEPTH    (27)
+#define MAX_SEARCH_DEPTH  (27)
+#define FOREST_SIZE	  (512)		//lets get 100 trees in one forest
+#define SAMPLE_SIZE	  (42000)
+#define N_FEATURES	  (12)		//number of features*28*28
+#define FEATURE_SET	  (28)		//amount of features to look for, m = sqrt(# of input variables)
+#define GRADIENT          (10)           //fit 10% of all images into each classification tree
 
 class node;
 node **forest;
